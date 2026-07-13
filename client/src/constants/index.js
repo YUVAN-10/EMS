@@ -3,8 +3,7 @@
  * All magic strings, options, and config values live here.
  */
 
-// API base URL — proxied via Vite in dev, change for production
-export const API_BASE_URL = "/api";
+export const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "/api";
 
 // Route paths used in React Router
 export const ROUTES = {
