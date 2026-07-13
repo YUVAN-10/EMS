@@ -1,0 +1,47 @@
+/* ---------- Dashboard Page — Luxury Styling ---------- */
+
+.dashboard__stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 44px;
+}
+
+.dashboard__recent {
+  animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: 0.35s;
+  opacity: 0;
+}
+
+.dashboard__recent-header {
+  margin-bottom: 22px;
+}
+
+.dashboard__section-title {
+  font-family: var(--font-heading);
+  font-size: var(--font-xl);
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.dashboard__section-subtitle {
+  font-size: var(--font-sm);
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+/* Tablet — 2 columns */
+@media (max-width: 1024px) {
+  .dashboard__stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+/* Mobile — 1 column, stacked one by one */
+@media (max-width: 768px) {
+  .dashboard__stats {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}

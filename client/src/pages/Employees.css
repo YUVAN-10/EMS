@@ -1,0 +1,83 @@
+/* ---------- Employees Page — Premium Styling ---------- */
+
+.employees-page__toolbar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 22px;
+  flex-wrap: wrap;
+}
+
+.employees-page__toolbar-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  flex: 1;
+}
+
+.employees-page__count {
+  font-size: var(--font-sm);
+  color: var(--text-muted);
+  margin-bottom: 18px;
+}
+
+.employees-page__count strong {
+  color: var(--primary-600);
+  font-weight: 700;
+}
+
+/* Pagination */
+.employees-page__pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 28px;
+  padding: 18px 0;
+}
+
+.employees-page__page-btn {
+  padding: 12px 24px;
+  border: 2px solid var(--warm-200);
+  border-radius: var(--radius-md);
+  background: var(--white);
+  color: var(--text-primary);
+  font-family: var(--font-heading);
+  font-size: var(--font-sm);
+  font-weight: 700;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+}
+
+.employees-page__page-btn:hover:not(:disabled) {
+  border-color: var(--primary-500);
+  color: var(--primary-600);
+  background: var(--primary-50);
+  box-shadow: var(--shadow-glow);
+}
+
+.employees-page__page-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.employees-page__page-info {
+  font-family: var(--font-heading);
+  font-size: var(--font-sm);
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .employees-page__toolbar {
+    flex-direction: column;
+  }
+
+  .employees-page__toolbar-left {
+    flex-direction: column;
+    width: 100%;
+  }
+}

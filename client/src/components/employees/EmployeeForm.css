@@ -1,0 +1,35 @@
+/* ---------- EmployeeForm — Premium Styling ---------- */
+
+.employee-form {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 36px;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--warm-100);
+  animation: fadeInUp 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.employee-form__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 26px;
+}
+
+.employee-form__actions {
+  margin-top: 36px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 14px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 640px) {
+  .employee-form {
+    padding: 22px;
+  }
+
+  .employee-form__grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}

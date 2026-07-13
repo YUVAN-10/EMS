@@ -1,0 +1,238 @@
+/* ===================================================
+   EMS — Luxury Design System
+   Premium Orange & White Theme
+   Designed for elegance, richness, and exclusivity
+   =================================================== */
+
+/* ---------- CSS Custom Properties (Design Tokens) ---------- */
+:root {
+  /* Primary — Rich Orange / Amber Gold palette */
+  --primary-50: #FFF7ED;
+  --primary-100: #FFEDD5;
+  --primary-200: #FED7AA;
+  --primary-300: #FDBA74;
+  --primary-400: #FB923C;
+  --primary-500: #F97316;
+  --primary-600: #EA580C;
+  --primary-700: #C2410C;
+  --primary-800: #9A3412;
+  --primary-gradient: linear-gradient(135deg, #F97316 0%, #FB923C 40%, #FDBA74 100%);
+  --primary-gradient-hover: linear-gradient(135deg, #EA580C 0%, #F97316 40%, #FB923C 100%);
+  --primary-gradient-rich: linear-gradient(135deg, #EA580C 0%, #F97316 30%, #FB923C 60%, #FED7AA 100%);
+  --primary-gradient-glass: linear-gradient(135deg, rgba(249,115,22,0.08) 0%, rgba(253,186,116,0.05) 100%);
+
+  /* Pure Whites & Warm Tones only */
+  --white: #FFFFFF;
+  --cream: #FFFCF8;
+  --warm-50: #FFF9F3;
+  --warm-100: #FFF3E8;
+  --warm-200: #FFE8D4;
+  --warm-300: #FFDCC0;
+  --warm-400: #FFD0AC;
+  --warm-500: #C69A6D;
+  --warm-600: #9A7553;
+
+  /* Text — warm-tinted neutrals */
+  --text-primary: #2D1B06;
+  --text-secondary: #7C5E3C;
+  --text-muted: #B8956F;
+  --text-white: #FFFFFF;
+  --text-on-primary: #FFFFFF;
+
+  /* Background */
+  --bg-primary: #FFFBF7;
+  --bg-card: #FFFFFF;
+  --bg-elevated: #FFFDF9;
+
+  /* Status — orange-tinted */
+  --success: #F97316;
+  --success-bg: #FFF7ED;
+  --danger: #DC6D28;
+  --danger-bg: #FFF3E8;
+  --inactive-color: #B8956F;
+  --inactive-bg: #FFF9F3;
+
+  /* Shadows — warm-tinted for luxury */
+  --shadow-sm: 0 1px 4px rgba(249, 115, 22, 0.04);
+  --shadow-md: 0 4px 16px rgba(249, 115, 22, 0.06);
+  --shadow-lg: 0 8px 32px rgba(249, 115, 22, 0.08);
+  --shadow-xl: 0 16px 48px rgba(249, 115, 22, 0.1);
+  --shadow-glow: 0 4px 24px rgba(249, 115, 22, 0.2);
+  --shadow-luxury: 0 20px 60px rgba(249, 115, 22, 0.12), 0 2px 8px rgba(249, 115, 22, 0.04);
+
+  /* Border radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 28px;
+  --radius-full: 50%;
+
+  /* Spacing */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 36px;
+  --space-2xl: 56px;
+
+  /* Typography — Premium Font Stack */
+  --font-heading: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-body: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-family: var(--font-body);
+  --font-xs: 0.75rem;
+  --font-sm: 0.875rem;
+  --font-base: 1rem;
+  --font-lg: 1.125rem;
+  --font-xl: 1.3rem;
+  --font-2xl: 1.625rem;
+  --font-3xl: 2.25rem;
+  --font-4xl: 3rem;
+  --font-5xl: 3.75rem;
+
+  /* Layout */
+  --sidebar-width: 280px;
+  --header-height: 76px;
+
+  /* Transitions */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-luxury: 600ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ---------- Reset & Base Styles ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  line-height: 1.7;
+  min-height: 100vh;
+  letter-spacing: -0.01em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  outline: none;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+/* ---------- Scrollbar — Premium Minimal ---------- */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--warm-300);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-400);
+}
+
+/* ---------- Animations — Smooth & Elegant ---------- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-24px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(249, 115, 22, 0.1); }
+  50% { box-shadow: 0 0 40px rgba(249, 115, 22, 0.2); }
+}
+
+.animate-in {
+  animation: fadeIn 0.5s var(--transition-luxury) forwards;
+}
+
+/* ---------- Toast overrides (react-hot-toast) ---------- */
+.toast-success {
+  border-left: 4px solid var(--primary-500) !important;
+}
+
+.toast-error {
+  border-left: 4px solid var(--danger) !important;
+}

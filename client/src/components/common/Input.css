@@ -1,0 +1,49 @@
+/* ---------- Input — Premium Styling ---------- */
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input-group__label {
+  font-family: var(--font-heading);
+  font-size: var(--font-sm);
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: 0.01em;
+}
+
+.input-group__input {
+  padding: 14px 18px;
+  border: 2px solid var(--warm-200);
+  border-radius: var(--radius-md);
+  background: var(--white);
+  color: var(--text-primary);
+  font-size: var(--font-sm);
+  transition: all var(--transition-normal);
+}
+
+.input-group__input::placeholder {
+  color: var(--text-muted);
+}
+
+.input-group__input:focus {
+  border-color: var(--primary-500);
+  box-shadow: 0 0 0 4px rgba(249, 115, 22, 0.08);
+}
+
+/* Error state */
+.input-group--error .input-group__input {
+  border-color: var(--danger);
+}
+
+.input-group--error .input-group__input:focus {
+  box-shadow: 0 0 0 4px rgba(220, 109, 40, 0.08);
+}
+
+.input-group__error {
+  font-size: var(--font-xs);
+  color: var(--danger);
+  font-weight: 600;
+}

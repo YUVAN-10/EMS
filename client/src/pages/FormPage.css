@@ -1,0 +1,30 @@
+/* ---------- Form Page — Premium Styling ---------- */
+
+.form-page {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.form-page__header {
+  margin-bottom: 28px;
+  animation: fadeIn 0.4s ease;
+}
+
+.form-page__title {
+  font-family: var(--font-heading);
+  font-size: var(--font-3xl);
+  font-weight: 900;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.form-page__subtitle {
+  font-size: var(--font-base);
+  color: var(--text-muted);
+  margin-top: 8px;
+}
+
+.form-page__subtitle strong {
+  color: var(--primary-600);
+  font-weight: 700;
+}
