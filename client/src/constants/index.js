@@ -3,7 +3,7 @@
  * All magic strings, options, and config values live here.
  */
 
-export const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "/api";
+export const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "https://ems-vdj9.onrender.com/";
 
 // Route paths used in React Router
 export const ROUTES = {
