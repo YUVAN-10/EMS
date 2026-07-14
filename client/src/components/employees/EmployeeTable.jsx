@@ -49,7 +49,10 @@ const EmployeeTable = ({ employees, onDelete, showActions = true }) => {
                   <div className="employee-table__avatar">
                     {getInitials(employee.fullName)}
                   </div>
-                  <span className="employee-table__name">{employee.fullName}</span>
+                  <div className="employee-table__name-info">
+                    <span className="employee-table__name">{employee.fullName}</span>
+                    <span className="employee-table__id">{employee.employeeId}</span>
+                  </div>
                 </div>
               </td>
               <td>{employee.email}</td>

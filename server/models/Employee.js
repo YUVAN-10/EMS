@@ -7,6 +7,12 @@ const { DEPARTMENTS, STATUSES } = require("../config/constants");
  */
 const employeeSchema = new mongoose.Schema(
   {
+    employeeId: {
+      type: String,
+      unique: true,
+      required: [true, "Employee ID is required"],
+      trim: true,
+    },
     fullName: {
       type: String,
       required: [true, "Full name is required"],

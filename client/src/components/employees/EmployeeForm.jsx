@@ -111,6 +111,16 @@ const EmployeeForm = ({
   return (
     <form className="employee-form" onSubmit={handleSubmit} noValidate>
       <div className="employee-form__grid">
+        {initialData && (
+          <Input
+            label="Employee ID"
+            id="employeeId"
+            name="employeeId"
+            value={initialData.employeeId || ""}
+            readOnly
+            disabled
+          />
+        )}
         <Input
           label="Full Name"
           id="fullName"

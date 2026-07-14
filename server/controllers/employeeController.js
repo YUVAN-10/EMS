@@ -47,7 +47,11 @@ const getEmployees = async (req, res, next) => {
     const filter = {};
 
     if (search && search.trim()) {
-      filter.fullName = { $regex: search.trim(), $options: "i" };
+      const searchRegex = { $regex: search.trim(), $options: "i" };
+      filter.$or = [
+        { fullName: searchRegex },
+        { employeeId: searchRegex }
+      ];
     }
 
     if (department) {
@@ -122,7 +126,19 @@ const createEmployee = async (req, res, next) => {
       return errorResponse(res, 409, "An employee with this email already exists");
     }
 
+    // Generate unique sequential employeeId (e.g. EMS1001, EMS1002, etc.)
+    const lastEmployee = await Employee.findOne({}, { employeeId: 1 }).sort({ createdAt: -1 });
+    let nextId = 1001;
+    if (lastEmployee && lastEmployee.employeeId) {
+      const numericPart = parseInt(lastEmployee.employeeId.replace("EMS", ""), 10);
+      if (!isNaN(numericPart)) {
+        nextId = numericPart + 1;
+      }
+    }
+    const employeeId = `EMS${nextId}`;
+
     const employee = await Employee.create({
+      employeeId,
       fullName: fullName.trim(),
       email: email.trim().toLowerCase(),
       mobile: mobile.trim(),

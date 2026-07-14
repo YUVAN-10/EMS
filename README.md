@@ -1,6 +1,6 @@
 # Employee Management System (EMS)
 
-A full-stack Employee Management System built with React.js and Node.js. Manage your workforce with an intuitive dashboard, full CRUD operations, search, and filter capabilities — all wrapped in a premium orange & white UI.
+A full-stack Employee Management System built with React.js and Node.js. Manage your workforce with an intuitive dashboard, full CRUD operations, search, and filter capabilities.
 
 ---
 
@@ -10,7 +10,7 @@ A full-stack Employee Management System built with React.js and Node.js. Manage 
 |------------|-------------------------------------|
 | Frontend   | React.js 18 (Vite), React Router 6 |
 | Backend    | Node.js, Express.js                 |
-| Database   | MongoDB (Mongoose ODM)              |
+| Database   | MongoDB atlas (Mongoose ODM)              |
 | Styling    | Vanilla CSS (custom design system)  |
 | HTTP       | Axios                               |
 | Toasts     | react-hot-toast                     |
